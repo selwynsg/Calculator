@@ -2,4 +2,11 @@
     <string name="app_name">assignment3</string>
     <string name="mvvm">MVVM</string>
     <string name="mvp">MVP</string>
+    <string name="number_1">Enter number 1</string>
+    <string name="number_2">Enter number 2</string>
+    <string name="add">ADD</string>
+    <string name="sub">SUBTRACT</string>
+    <string name="multi">MULTIPLY</string>
+    <string name="div">DIVIDE</string>
+    <string name="results">"results: %1$s"</string>
 </resources>
