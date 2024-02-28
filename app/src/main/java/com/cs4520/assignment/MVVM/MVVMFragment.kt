@@ -20,8 +20,7 @@ class MVVMFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = MvvmFragmentBinding.inflate(layoutInflater)
-        val view = binding.root
-        return view
+        return binding.root
 
     }
 
@@ -55,7 +54,8 @@ class MVVMFragment: Fragment() {
     }
 
     private fun initObserver(){
-        viewModel.liveData.observe(viewLifecycleOwner) { result ->
+
+        viewModel.name.observe(viewLifecycleOwner) { result ->
             if (result.equals("Cannot divide by 0") || result.equals("Cannot have Null inputs")) {
                 Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
                 binding.Results.visibility = View.GONE
