@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.cs4520.assignment3.R
 import com.cs4520.assignment3.databinding.MvvmFragmentBinding
 
@@ -26,7 +27,7 @@ class MVVMFragment: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = CalculatorViewModel()
+        viewModel = ViewModelProvider(this)[CalculatorViewModel::class.java]
         binding.addBut.setOnClickListener{
             val in1 = binding.UserInput1.text.toString().toDoubleOrNull()
             val in2 = binding.UserInput2.text.toString().toDoubleOrNull()
