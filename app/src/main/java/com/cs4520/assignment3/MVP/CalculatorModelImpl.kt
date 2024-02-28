@@ -14,7 +14,6 @@ class CalculatorModelImpl : CalculatorModel {
     }
 
     override fun divide(num1: Double, num2: Double): Double {
-        if (num2 == 0.0) throw ArithmeticException("Divide by 0 is not allowed")
         return num1/num2
     }
 }

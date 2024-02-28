@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.cs4520.assignment3.MVP.CalculatorView
 import com.cs4520.assignment3.R
 import com.cs4520.assignment3.databinding.MvvmFragmentBinding
 
-class MVVMFragment: Fragment() {
+class MVVMFragment: Fragment(){
     private lateinit var viewModel : CalculatorViewModel
     private var _binding: MvvmFragmentBinding? = null
     private val binding get() = _binding!!
@@ -54,7 +55,6 @@ class MVVMFragment: Fragment() {
     }
 
     private fun initObserver(){
-
         viewModel.name.observe(viewLifecycleOwner) { result ->
             if (result.equals("Cannot divide by 0") || result.equals("Cannot have Null inputs")) {
                 Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
@@ -68,7 +68,5 @@ class MVVMFragment: Fragment() {
         }
 
     }
-
-
 
 }
