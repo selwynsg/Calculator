@@ -8,15 +8,17 @@ import com.cs4520.assignment3.MVP.CalculatorModelImpl
 
 class CalculatorViewModel : ViewModel() {
     private val _liveData = MutableLiveData<String>()
-    val name : LiveData<String> = _liveData
+    val calc : LiveData<String> = _liveData
+
+    private val _errorData = MutableLiveData<String>()
+    val err : LiveData<String> = _errorData
     private var model: CalculatorModel = CalculatorModelImpl()
 
     private fun operations(num1: Double?, num2: Double?, operation: (Double, Double) -> Double) {
         if (num1 == null || num2 == null) {
-            _liveData.value = "Cannot have Null inputs"
+            _errorData.value = "Cannot have Null inputs"
         } else {
             _liveData.value = operation(num1, num2).toString()
-
         }
     }
 
@@ -34,7 +36,7 @@ class CalculatorViewModel : ViewModel() {
 
     fun divide(num1: Double?, num2: Double?) {
         if (num2 == 0.0) {
-            _liveData.value = "Cannot divide by 0"
+            _errorData.value = "Cannot divide by 0"
         } else{
             operations(num1,num2, model::divide)
         }
