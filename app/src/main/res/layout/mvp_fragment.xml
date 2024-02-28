@@ -12,14 +12,12 @@
         android:hint="@string/number_1"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/UserInput2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintBottom_toTopOf="@id/UserInput2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/UserInput2"
@@ -28,12 +26,10 @@
         android:hint="@string/number_2"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/UserInput1"
+        app:layout_constraintBottom_toTopOf="@id/Results"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserInput1"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/Results"
@@ -41,13 +37,10 @@
         android:layout_height="wrap_content"
         android:text="@string/results"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/UserInput2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/UserInput2"
         app:layout_constraintTop_toBottomOf="@id/UserInput2"
-        app:layout_constraintVertical_bias="0.0"
-        />
+        app:layout_constraintBottom_toTopOf="@id/addBut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/addBut"
@@ -55,6 +48,7 @@
         android:layout_height="wrap_content"
         android:text="@string/add"
         app:layout_constraintTop_toBottomOf="@id/Results"
+        app:layout_constraintBottom_toTopOf="@id/subBut"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -64,6 +58,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sub"
         app:layout_constraintTop_toBottomOf="@id/addBut"
+        app:layout_constraintBottom_toTopOf="@id/multiBut"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -73,6 +68,7 @@
         android:layout_height="wrap_content"
         android:text="@string/multi"
         app:layout_constraintTop_toBottomOf="@id/subBut"
+        app:layout_constraintBottom_toTopOf="@id/divBut"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -82,8 +78,7 @@
         android:layout_height="wrap_content"
         android:text="@string/div"
         app:layout_constraintTop_toBottomOf="@id/multiBut"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

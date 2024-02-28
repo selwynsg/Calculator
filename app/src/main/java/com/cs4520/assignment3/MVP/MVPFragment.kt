@@ -67,11 +67,18 @@ class MVPFragment: Fragment(), CalculatorView {
 
     override fun printError(error: String) {
         Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+        results.visibility = View.GONE
     }
 
     override fun clearInput() {
         num1.text.clear()
         num2.text.clear()
+    }
+
+    override fun onDestroy() {
+        presenter.onDestroy()
+        super.onDestroy()
+
     }
 
 }

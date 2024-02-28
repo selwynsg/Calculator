@@ -35,4 +35,8 @@ class CalculatorPresenterImpl(calculatorView: CalculatorView) : CalculatorPresen
         }
     }
 
+    override fun onDestroy(){
+        view = null
+    }
+
 }
